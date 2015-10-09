@@ -127,6 +127,21 @@ require_relative '../models/address_book'
        entry = book.binary_search("Billy")
        expect(entry).to be_nil
      end
+
+     describe "#iterative_search" do
+       it "searches AddressBook for all entries" do
+       book.import_from_csv("entries.csv")
+       entry = book.binary_search("Dan")
+       expect(entry).to be_nil
+     end
+
+       it "searches AddressBook for all entries" do
+       book.import_from_csv("entries.csv")
+       entry = book.binary_search("Billy")
+       expect(entry).to be_nil
+     end
+
     end
    end
   end
+end

@@ -47,6 +47,31 @@ require "csv"
         return nil
       end
 
+   def iterative_search
+     # #1
+         lower = 0
+         upper = entries.length - 1
+
+     # #2
+         while lower <= upper
+     # #3
+           mid = (lower + upper) / 2
+           mid_name = entries[mid].name
+
+     # #4
+           if name == mid_name
+             return entries[mid]
+           elsif name < mid_name
+             upper = mid - 1
+           elsif name > mid_name
+             lower = mid + 1
+           end
+         end
+
+     # #5
+         return nil
+       end
+
 
    def import_from_csv(file_name)
      csv_text = File.read(file_name)
