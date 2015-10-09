@@ -165,7 +165,7 @@ require_relative '../models/address_book'
       puts entry.to_s
       search_submenu(entry)
     end
-  end
+  end  
 
    def read_csv
  # #1
